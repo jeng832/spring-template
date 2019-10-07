@@ -26,19 +26,20 @@ public class ApiController {
 	
 	@RequestMapping(value="/value/elem/{element}", method=RequestMethod.PUT)
 	public ResponseEntity<?> postValue(@PathVariable Integer element) {
-		this.value.add(element);;
+		this.value.add(element);
 		return ResponseEntity.ok().build();
 	}
 	
 	@RequestMapping(value="/value/index/{index}/elem/{element}", method=RequestMethod.POST)
 	public ResponseEntity<?> postValue(@PathVariable Integer index, @PathVariable Integer element) {
-		this.value.add(index, element);;
+		this.value.add(index, element);
 		return ResponseEntity.ok().build();
 	}
 	
 	@RequestMapping(value="/value/index/{index}", method=RequestMethod.DELETE)
-	public ResponseEntity<?> deleteValue(@PathVariable Integer index) {
+	public ResponseEntity<?> deleteValue(@PathVariable int index) {
 		this.value.remove(index);
+		
 		return ResponseEntity.ok().build();
 	}
 }
